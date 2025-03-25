@@ -1,8 +1,9 @@
 import {
-  StyleSheet, TextInput, View, KeyboardAvoidingView
+  StyleSheet, TextInput, View
 } from "react-native"
 import { router } from "expo-router"
 
+import KeyboardAvoidingView from "../../components/KeyboardAvoingView"
 import CircleButton from "../../components/CircleButton"
 import Icon from "../../components/Icon"
 
@@ -12,9 +13,9 @@ const handlePress = (): void => {
 
 const Edit = (): JSX.Element => {
   return (
-    <KeyboardAvoidingView behavior="height" style={styles.container}>
+    <KeyboardAvoidingView style={styles.container}>
       <View style={styles.inputContainer}>
-        <TextInput multiline style={styles.input} value={"買い物\nリスト"} />
+        <TextInput autoFocus multiline style={styles.input} value={"買い物\nリスト"} />
       </View>
       <CircleButton onPress={handlePress}>
         <Icon name={"check"} size={40} color={"#ffffff"} />
