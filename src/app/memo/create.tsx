@@ -1,10 +1,11 @@
 import {
-  StyleSheet, TextInput, View, KeyboardAvoidingView
+  StyleSheet, TextInput, View
 } from "react-native"
 import { router } from "expo-router"
 import { collection, addDoc, Timestamp } from "firebase/firestore"
 import { useState } from "react"
 
+import KeyboardAvoidingView from "../../components/KeyboardAvoingView"
 import CircleButton from "../../components/CircleButton"
 import Icon from "../../components/Icon"
 import { db, auth } from "../../config"
@@ -29,7 +30,7 @@ const handlePress = (bodyText: string): void => {
 const Create = (): JSX.Element => {
   const [bodyText, setBodyText] = useState("")
   return (
-    <KeyboardAvoidingView  behavior="height" keyboardVerticalOffset={80} style={styles.container}>
+    <KeyboardAvoidingView  style={styles.container}>
       <View style={styles.inputContainer}>
         <TextInput
           multiline
